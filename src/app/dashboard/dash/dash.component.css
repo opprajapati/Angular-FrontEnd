@@ -1,0 +1,68 @@
+
+.dash_style{
+    width:100%;
+    
+    background-color:rgb(202, 221, 255) ;
+}
+#dash_heading{
+    margin-left: 180px;
+}
+.dash_view{
+    margin-left: 180px;
+ 
+}
+.card{
+    display: inline-block;
+    margin: 5px;
+ 
+}
+.card .dash_circle .card_inside{
+    display: inline-block;
+    margin-top: 100px;
+
+}
+.dash_view1{
+    margin-left: 180px;
+}
+.dash_view1 .card{
+    margin: 0px;
+    background-color:rgba(112, 90, 255, 0.466);
+}
+.dash_view3{
+   
+    width: 960px;
+    height: 200px;
+    background-color: aliceblue;
+    border-radius: 15px;
+}
+.img_first{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+
+.img_para1 {
+    padding: 10px;
+}
+.img_second{
+    padding-top: 400px;
+    margin-right: 400px;
+}
+.img_centre{
+    display: flex;
+    width: 70px;
+    height: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
