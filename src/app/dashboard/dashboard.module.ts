@@ -9,9 +9,7 @@ import { AboutComponent } from './about/about.component';
   {
     path:'analytics',component:AnalyticsComponent
   },
-  {
-    path:'about',component:AboutComponent
-  }
+ 
 
 ];
 

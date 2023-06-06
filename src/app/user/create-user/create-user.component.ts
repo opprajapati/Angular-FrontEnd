@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormControl, Validators} from'@angular/forms'
+import { FormGroup,FormControl, Validators, FormBuilder} from'@angular/forms'
 
 
 
@@ -9,54 +9,66 @@ import { FormGroup,FormControl, Validators} from'@angular/forms'
   styleUrls: ['./create-user.component.css']
 })
 export class CreateUserComponent implements OnInit {
-    formdata:string='';
-    isvalid:boolean=false;
     
-  constructor() { } 
-  regForm =new FormGroup(
-    {
-     firstName:new FormControl('',[
+   regForm!:FormGroup;
+  constructor( private fb:FormBuilder) { } 
+  regFormData(){
+    this.regForm =this.fb.group({
+    
+     firstName:['',[
       Validators.required,
-      Validators.minLength(5)
-     ]),
-     lastName:new FormControl('',[
+      Validators.minLength(5),
+      Validators.pattern('[a-zA-Z]+')
+    ]
+     ],
+     lastName:['',[
       Validators.required,
-      Validators.minLength(5)
-     ]),
-     gender:new FormControl('',[
-      Validators.required
-     ]),
-     dob:new FormControl('',[
+      Validators.minLength(5),
+      Validators.pattern('[a-zA-Z]+')
+    ]
+     ],
+     gender:['',[
+      Validators.required]
+     ],
+     dob:['',[
       Validators.required,
-     ]),
-     emailid:new FormControl('',[
+     ]],
+     emailId:['',[
       Validators.required,
-      Validators.email
-     ]),
-     mobileno:new FormControl('',[
+      Validators.email]
+     ],
+     mobileno:['',[
       Validators.required,
-      Validators.minLength(10)
-     ]),
-     pass:new FormControl('',[
+      Validators.minLength(10)]
+     ],
+     pass:['',[
       Validators.required,
-      Validators.minLength(6)
-     ]),
-     confirmpass:new FormControl('',[
+      Validators.minLength(6),
+      Validators.pattern(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[#$!%*@?&^_-]).{12,}/)
+    ]
+     ],
+     confirmpass:['',[
       Validators.required,
-      Validators.maxLength(6)
-     ]),
+      Validators.pattern(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[#$!%*@?&^_-]).{12,}/)]
+     ],
     
     }
-   )
+    )}
 
-  ngOnInit(): void { }
-  onCreate()
-  {
-    this.formdata=JSON.stringify(this.regForm.value);
-    console.log(this.formdata);
+  ngOnInit(): void {
+    this.regFormData()
+   }
+  onCreate(){
+    let formData={
+      ...this.regForm.value
+    }
+    console.log(formData);
+
+  }
+  
     
   }
 
 
 
-}
+

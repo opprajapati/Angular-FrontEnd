@@ -1,0 +1,21 @@
+.menuheader{
+width: 100%;
+height: 75px;  
+background-color: black;  
+}
+ul{
+    padding-top: 20px;
+    margin-right: 50px;
+
+}
+
+#mainheading{
+    color: rgb(255, 38, 38); 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-right: 600px;
+  
+}
+
+
+    
+

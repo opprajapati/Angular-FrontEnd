@@ -1,9 +1,9 @@
 <div class="reg_div">
     <br>
-    <h4 style="margin-left: 180px;">Create New User</h4>
+    <h4 style="margin-left: 300px;">Create New User</h4>
     <br>
      <div class="form_div" classList="FormGroup">
-     <h5 style="margin-left: 10px;"> Personal Details</h5> 
+     <h5 style="margin-left:300px;padding-top: 20px; color: rgb(18, 40, 235);"> Personal Details</h5> 
      <hr>
      <form [formGroup]="regForm"  (ngSubmit)="onCreate()"  >
         <br>
@@ -11,10 +11,18 @@
             <div class="col-sm-4">
              <label>First Name*</label>
               <input type="text" class="form-control"  formControlName="firstName" style="border: 1px solid;" placeholder="First name" required>
+              <ng-container class="alert alert-danger" *ngIf="regForm.get('firstName')?.invalid && regForm.get('firstName')?.touched">
+                <span *ngIf="regForm.get('firstName')?.errors?.['required']">first Name Is Required</span>
+            
+              </ng-container>
             </div>
             <div class="col-sm-4">
             <label>Last Name*</label>
               <input type="text" class="form-control" formControlName="lastName" style="border: 1px solid;" placeholder="Last name" required>
+              <ng-container class="alert alert-danger" *ngIf="regForm.get('lasttName')?.invalid && regForm.get('lastName')?.touched">
+                <span *ngIf="regForm.get('lastName')?.errors?.['required']">last Name Is Required</span>
+            
+              </ng-container>
             </div>
           </div> 
           <br>
@@ -22,22 +30,38 @@
             <div class="col-sm-4">
              <label>Gender*</label>
               <select type="select"
-                class="form-control" style="border: 1px solid;"placeholder="gender"  formControlName="gender" required><option>Male</option><option>Female</option> </select>
+                class="form-control" style="border: 1px solid;"placeholder="gender"  formControlName="gender" required><option>Male</option><option>Female</option>Gender </select>
+                <ng-container class="alert alert-danger" *ngIf="regForm.get('gender')?.invalid && regForm.get('gender')?.touched">
+                  <span *ngIf="regForm.get('gender')?.errors?.['required']">gender is required</span>
+              
+                </ng-container>
             </div>
             <div class="col-sm-4">
             <label>Date of Birth*</label>
               <input type="date" class="form-control" formControlName="dob"  style="border: 1px solid;"placeholder="Date of birth" required>
+              <ng-container class="alert alert-danger" *ngIf="regForm.get('dob')?.invalid && regForm.get('firstName')?.touched">
+                <span *ngIf="regForm.get('dob')?.errors?.['required']">dob is required</span>
+            
+              </ng-container>
             </div>
           </div> 
           <br>
           <div class="row">
             <div class="col-sm-4">               
              <label>Email*</label>
-              <input type="email" class="form-control"  formControlName="emailid" style="border: 1px solid;"placeholder="Enter your Email" required>
+              <input type="email" class="form-control"  formControlName="emailId" style="border: 1px solid;"placeholder="Enter your Email" required>
+              <ng-container class="alert alert-danger" *ngIf="regForm.get('emailId')?.invalid && regForm.get('firstName')?.touched">
+                <span *ngIf="regForm.get('firstName')?.errors?.['required']">email Name Is Required</span>
+            
+              </ng-container>
             </div>
             <div class="col-sm-4">
             <label>Phone Number*</label>
               <input type="number" class="form-control" formControlName="mobileno" style="border: 1px solid;" placeholder="Enter Mobile Number" required>
+              <ng-container class="alert alert-danger" *ngIf="regForm.get('mobileno')?.invalid && regForm.get('mobileno')?.touched">
+                <span *ngIf="regForm.get('mobileno')?.errors?.['required']">mobile number Is Required</span>
+              <span ngif*="regForm.mobileno.invalid" class="alert"> Mobile no is required</span>
+              </ng-container>
             </div>
             </div>
              <br>
@@ -47,14 +71,28 @@
                 <div class="col-sm-4">               
                  <label>Password*</label>
                   <input type="password" class="form-control" formControlName="pass"  style="border: 1px solid;"placeholder="Create Password" required>
+                  <ng-container class="alert alert-danger" *ngIf="regForm.get('pass')?.invalid && regForm.get('password')?.touched">
+                    <span *ngIf="regForm.get('pass')?.errors?.['required']">password Is Required</span>
+
+                  </ng-container>
                 </div>
                 <div class="col-sm-4">
                 <label>Confirm Password*</label>
                   <input type="password" class="form-control" formControlName="confirmpass" style="border: 1px solid;" placeholder="Confirm Password" required>
+                  <ng-container class="alert alert-danger" *ngIf="regForm.get('confirmpass')?.invalid && regForm.get('confirmpass')?.touched">
+                    <span *ngIf="regForm.get('confirmpass')?.errors?.['required']">conformPassword Is Required</span>
+                  </ng-container>
+                  <ng-container>
+                    <span
+                    *ngIf="regForm.get('confirmpass')?.hasError('confirmpass')">
+                    Passwords did not match
+                </span>
+                  </ng-container>
+                 
                 </div>
                 </div>
                 <br>
-             <button type="submit" style="background-color: rgb(107, 82, 250); padding-left: 40px;border-radius: 10px;  padding-right: 30px;  margin-left: 250px; text-align: center;"> Create</button>
+             <button type="submit"  style="background-color: rgb(107, 82, 250); padding-left: 40px;border-radius: 10px;  padding-right: 30px;  margin-left: 250px; text-align: center;"> Create</button>
  
      </form>
      </div>

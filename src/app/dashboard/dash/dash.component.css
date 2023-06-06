@@ -1,60 +1,93 @@
-
-.dash_style{
-    width:100%;
-    
-    background-color:rgb(202, 221, 255) ;
+.dashboard{
+    background-color: #DDDDFF;
 }
-#dash_heading{
-    margin-left: 180px;
+ .container{ 
+    width: 1200px; 
+    margin: 0 auto; }
+.overallImg{
+    width: 240px;
+    height: 33px;
 }
-.dash_view{
-    margin-left: 180px;
- 
+.mainHeading{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 22px;
+line-height: 166.02%;
+color: #1B1B1B;
 }
 .card{
-    display: inline-block;
-    margin: 5px;
- 
+    padding: 40px;
+    border-radius: 20px;
+    cursor: pointer;
 }
-.card .dash_circle .card_inside{
-    display: inline-block;
-    margin-top: 100px;
-
+.card:hover{
+    background-color: yellow;
 }
-.dash_view1{
-    margin-left: 180px;
-}
-.dash_view1 .card{
-    margin: 0px;
-    background-color:rgba(112, 90, 255, 0.466);
-}
-.dash_view3{
-   
-    width: 960px;
-    height: 200px;
-    background-color: aliceblue;
-    border-radius: 15px;
-}
-.img_first{
-    display: flex;
-    justify-content: space-between;
-    margin-left: 10px;
+.box{
+width: 80px;
+height: 80px;
+ padding: 35px 18px;
+border: 2px solid #000;
+border-radius: 25px;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
-.img_para1 {
-    padding: 10px;
+.iocnBox{
+    width: 8px;
+height: 8px;
+background: #5252B0;
+border-radius: 50%;
 }
-.img_second{
-    padding-top: 400px;
-    margin-right: 400px;
+.loanCardSection{
+    background-image: url('/assets/images/loanBgImage.jpg');
+    background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+cursor: pointer;
+border-radius: 20px;
 }
-.img_centre{
-    display: flex;
-    width: 70px;
-    height: 70px;
+.mixInfo img{
+   height:240px;
+    width: 240px;
+   border-radius: 10px;
+object-fit: cover;
+}
+.mixPara{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 38px;
+/* or 208% */
+
+font-feature-settings: 'pnum' on, 'lnum' on;
+
+color: #222222;
+
+}
+.subHeading{
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 104.52%;
+
+margin-bottom: 10px;
+align-items: center;
+color: #FFFFFF;
+padding-left: 35px;
 }
 
 
+.loadCard button{
+  display:none;
+}
+.loadCard{
+    border-radius:40px;
+}
 
 
 

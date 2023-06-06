@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AboutComponent } from '../about/about.component';
 
 @Component({
   selector: 'app-dash',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashComponent implements OnInit {
 
-  constructor() { }
+  constructor(  private router:Router) { }
 
   ngOnInit(): void {
+  }
+  goToAbout(){
+    this.router.navigate(['dashboard/about'])
   }
 
 }

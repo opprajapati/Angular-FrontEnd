@@ -7,6 +7,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { UserModule } from './user/user.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
+import { HeaderComponent } from './header/header.component';
+
 
 
 @NgModule({
@@ -14,6 +16,8 @@ import { AdminComponent } from './admin/admin.component';
     AppComponent,
     ChartComponent,
     AdminComponent,
+    HeaderComponent,
+   
  
   ],
   imports: [
@@ -27,6 +31,7 @@ import { AdminComponent } from './admin/admin.component';
    
     
   ],
+ 
   providers: [],
   bootstrap: [AppComponent]
 })
